@@ -7,3 +7,5 @@
 .R.DataTmp
 
 *.DS_Store
+
+scratch/*
