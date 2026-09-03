@@ -1,0 +1,9 @@
+#History files
+.Rhistory
+.Rapp.history
+
+#Session Data files
+.R.Data
+.R.DataTmp
+
+*.DS_Store
