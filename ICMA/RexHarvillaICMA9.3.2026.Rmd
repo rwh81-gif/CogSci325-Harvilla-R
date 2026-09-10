@@ -4,22 +4,34 @@ output: html_notebook
 author: "Rex Harvilla"
 date: "9-3-2026"
 ---
+
+```{r}
+#| label: setup
+#| include: false
+
+library("tidyverse")
+library("palmerpenguins")
+```
+# ICMA 9-10-2026
+
+```{r}
+ggplot(data=penguins, mapping=aes(x=flipper_length_mm,
+                                  y=bill_length_mm)) + 
+  geom_point()
+```
+
+```{r}
+PlantGrowth
+ggplot(data=PlantGrowth, mapping=aes(y=weight,x=group)) + 
+  geom_point(alpha=0.5) + stat_summary(geom="pointrange",fun.data = "mean_se", color="purple")
+```
+that sure is tidy data
+
+
 # ICMA 9-3-2026
-In the plot, I see a graph with the x axis being speed and going from 0 to 25, and the y axis showing distance and going from 0 to 100. I see points plotted on the graph in a upward trend. I see my reflection in my computer screen with a big smile on my face because yippee!!! time for R!!!!
-# Introduction
-This is an [R Markdown](http://rmarkdown.rstudio.com) Notebook. When you execute code within the notebook, the results appear beneath the code. 
-## sub-heading
-### hello
-# no
-Try executing this chunk by clicking the *Run* button within the chunk or by placing your cursor inside it and pressing *Cmd+Shift+Enter*. 
 
 ```{r}
 plot(cars)
 ```
-
-Add a new chunk by clicking the *Insert Chunk* button on the toolbar or by pressing *Cmd+Option+I*.
-
-When you save the notebook, an HTML file containing the code and output will be saved alongside it (click the *Preview* button or press *Cmd+Shift+K* to preview the HTML file). 
-
-The preview shows you a rendered HTML copy of the contents of the editor. Consequently, unlike *Knit*, *Preview* does not run any R code chunks. Instead, the output of the chunk when it was last run in the editor is displayed.
+In the plot, I see a graph with the x axis being speed and going from 0 to 25, and the y axis showing distance and going from 0 to 100. I see points plotted on the graph in a upward trend. I see my reflection in my computer screen with a big smile on my face because yippee!!! time for R!!!!
 
