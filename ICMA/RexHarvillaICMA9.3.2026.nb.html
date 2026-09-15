@@ -1755,6 +1755,42 @@ display: none;
 
 
 <!-- rnb-text-begin -->
+<p>#ICMA 9-15-2026</p>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-output-begin eyJkYXRhIjoiXG48IS0tIHJuYi1zb3VyY2UtYmVnaW4gZXlKa1lYUmhJam9pWUdCZ2NseHVabXhwWjJoMGN5QjhQaUJjYmlBZ1ptbHNkR1Z5S0dGeWNsOWtaV3hoZVNBK0lERXlNQ0FtSUdSbGNGOWtaV3hoZVNBOFBTQXdLU0I4UGlCaGNuSmhibWRsS0dSbGMyTW9ZWEp5WDJSbGJHRjVLU2xjYmx4dVlHQmdJbjA9IC0tPlxuXG5gYGByXG5mbGlnaHRzIHw+IFxuICBmaWx0ZXIoYXJyX2RlbGF5ID4gMTIwICYgZGVwX2RlbGF5IDw9IDApIHw+IGFycmFuZ2UoZGVzYyhhcnJfZGVsYXkpKVxuXG5gYGBcblxuPCEtLSBybmItc291cmNlLWVuZCAtLT5cbiJ9 -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuZmxpZ2h0cyB8PiBcbiAgZmlsdGVyKGFycl9kZWxheSA+IDEyMCAmIGRlcF9kZWxheSA8PSAwKSB8PiBhcnJhbmdlKGRlc2MoYXJyX2RlbGF5KSlcblxuYGBgIn0= -->
+<pre class="r"><code>flights |&gt; 
+  filter(arr_delay &gt; 120 &amp; dep_delay &lt;= 0) |&gt; arrange(desc(arr_delay))
+</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-output-begin eyJkYXRhIjoiXG48IS0tIHJuYi1zb3VyY2UtYmVnaW4gZXlKa1lYUmhJam9pWUdCZ2NseHVVR3hoYm5SSGNtOTNkR2dnZkQ1Y2JpQWdaMmR3Ykc5MEtHRmxjeWg1UFhkbGFXZG9kQ3dnZUQxbmNtOTFjQ2twSUN0Y2JpQWdaMlZ2YlY5aWIzaHdiRzkwS0hkcFpIUm9JRDBnTUM0eUtWeHVYRzVnWUdBaWZRPT0gLS0+XG5cbmBgYHJcblBsYW50R3Jvd3RoIHw+XG4gIGdncGxvdChhZXMoeT13ZWlnaHQsIHg9Z3JvdXApKSArXG4gIGdlb21fYm94cGxvdCh3aWR0aCA9IDAuMilcblxuYGBgXG5cbjwhLS0gcm5iLXNvdXJjZS1lbmQgLS0+XG4ifQ== -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuUGxhbnRHcm93dGggfD5cbiAgZ2dwbG90KGFlcyh5PXdlaWdodCwgeD1ncm91cCkpICtcbiAgZ2VvbV9ib3hwbG90KHdpZHRoID0gMC4yKVxuXG5gYGAifQ== -->
+<pre class="r"><code>PlantGrowth |&gt;
+  ggplot(aes(y=weight, x=group)) +
+  geom_boxplot(width = 0.2)
+</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-output-begin eyJkYXRhIjoiXG48IS0tIHJuYi1zb3VyY2UtYmVnaW4gZXlKa1lYUmhJam9pWUdCZ2NseHVabXhwWjJoMGN5QjhQaUJjYmlBZ1lYSnlZVzVuWlNoa1pYTmpLRzF2Ym5Sb0tTbGNiaUFnSUNBZ0lDQWdJRnh1WEc1Z1lHQWlmUT09IC0tPlxuXG5gYGByXG5mbGlnaHRzIHw+IFxuICBhcnJhbmdlKGRlc2MobW9udGgpKVxuICAgICAgICAgXG5cbmBgYFxuXG48IS0tIHJuYi1zb3VyY2UtZW5kIC0tPlxuIn0= -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuZmxpZ2h0cyB8PiBcbiAgYXJyYW5nZShkZXNjKG1vbnRoKSlcbiAgICAgICAgIFxuXG5gYGAifQ== -->
+<pre class="r"><code>flights |&gt; 
+  arrange(desc(month))
+         
+</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
 <!-- rnb-text-end -->
 <!-- rnb-text-begin -->
 <div id="icma-9-10-2026" class="section level1">
@@ -1802,7 +1838,7 @@ R!!!!</p>
 <!-- rnb-text-end -->
 </div>
 
-<div id="rmd-source-code">LS0tCnRpdGxlOiAiRDJTQyBJQ01BcyIKb3V0cHV0OiBodG1sX25vdGVib29rCmF1dGhvcjogIlJleCBIYXJ2aWxsYSIKZGF0ZTogIjktMy0yMDI2IgotLS0KCmBgYHtyfQojfCBsYWJlbDogc2V0dXAKI3wgaW5jbHVkZTogZmFsc2UKCmxpYnJhcnkoInRpZHl2ZXJzZSIpCmxpYnJhcnkoInBhbG1lcnBlbmd1aW5zIikKYGBgCiMgSUNNQSA5LTEwLTIwMjYKCmBgYHtyfQpnZ3Bsb3QoZGF0YT1wZW5ndWlucywgbWFwcGluZz1hZXMoeD1mbGlwcGVyX2xlbmd0aF9tbSwKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIHk9YmlsbF9sZW5ndGhfbW0pKSArIAogIGdlb21fcG9pbnQoKQpgYGAKCmBgYHtyfQpQbGFudEdyb3d0aApnZ3Bsb3QoZGF0YT1QbGFudEdyb3d0aCwgbWFwcGluZz1hZXMoeT13ZWlnaHQseD1ncm91cCkpICsgCiAgZ2VvbV9wb2ludChhbHBoYT0wLjUpICsgc3RhdF9zdW1tYXJ5KGdlb209InBvaW50cmFuZ2UiLGZ1bi5kYXRhID0gIm1lYW5fc2UiLCBjb2xvcj0icHVycGxlIikKYGBgCnRoYXQgc3VyZSBpcyB0aWR5IGRhdGEKCgojIElDTUEgOS0zLTIwMjYKCmBgYHtyfQpwbG90KGNhcnMpCmBgYApJbiB0aGUgcGxvdCwgSSBzZWUgYSBncmFwaCB3aXRoIHRoZSB4IGF4aXMgYmVpbmcgc3BlZWQgYW5kIGdvaW5nIGZyb20gMCB0byAyNSwgYW5kIHRoZSB5IGF4aXMgc2hvd2luZyBkaXN0YW5jZSBhbmQgZ29pbmcgZnJvbSAwIHRvIDEwMC4gSSBzZWUgcG9pbnRzIHBsb3R0ZWQgb24gdGhlIGdyYXBoIGluIGEgdXB3YXJkIHRyZW5kLiBJIHNlZSBteSByZWZsZWN0aW9uIGluIG15IGNvbXB1dGVyIHNjcmVlbiB3aXRoIGEgYmlnIHNtaWxlIG9uIG15IGZhY2UgYmVjYXVzZSB5aXBwZWUhISEgdGltZSBmb3IgUiEhISEKCg==</div>
+<div id="rmd-source-code">LS0tCnRpdGxlOiAiRDJTQyBJQ01BcyIKb3V0cHV0OiBodG1sX25vdGVib29rCmF1dGhvcjogIlJleCBIYXJ2aWxsYSIKZGF0ZTogIjktMy0yMDI2IgotLS0KCiNJQ01BIDktMTUtMjAyNgpgYGB7cn0KZmxpZ2h0cyB8PiAKICBmaWx0ZXIoYXJyX2RlbGF5ID4gMTIwICYgZGVwX2RlbGF5IDw9IDApIHw+IGFycmFuZ2UoZGVzYyhhcnJfZGVsYXkpKQoKYGBgCgpgYGB7cn0KUGxhbnRHcm93dGggfD4KICBnZ3Bsb3QoYWVzKHk9d2VpZ2h0LCB4PWdyb3VwKSkgKwogIGdlb21fYm94cGxvdCh3aWR0aCA9IDAuMikKCmBgYAoKYGBge3J9CmZsaWdodHMgfD4gCiAgYXJyYW5nZShkZXNjKG1vbnRoKSkKICAgICAgICAgCgpgYGAKCgoKYGBge3J9CiN8IGxhYmVsOiBzZXR1cAojfCBpbmNsdWRlOiBmYWxzZQoKbGlicmFyeSgidGlkeXZlcnNlIikKbGlicmFyeSgicGFsbWVycGVuZ3VpbnMiKQpsaWJyYXJ5KCJueWNmbGlnaHRzMTMiKQoKYGBgCiMgSUNNQSA5LTEwLTIwMjYKCmBgYHtyfQpnZ3Bsb3QoZGF0YT1wZW5ndWlucywgbWFwcGluZz1hZXMoeD1mbGlwcGVyX2xlbmd0aF9tbSwKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIHk9YmlsbF9sZW5ndGhfbW0pKSArIAogIGdlb21fcG9pbnQoKQpgYGAKCmBgYHtyfQpQbGFudEdyb3d0aApnZ3Bsb3QoZGF0YT1QbGFudEdyb3d0aCwgbWFwcGluZz1hZXMoeT13ZWlnaHQseD1ncm91cCkpICsgCiAgZ2VvbV9wb2ludChhbHBoYT0wLjUpICsgc3RhdF9zdW1tYXJ5KGdlb209InBvaW50cmFuZ2UiLGZ1bi5kYXRhID0gIm1lYW5fc2UiLCBjb2xvcj0icHVycGxlIikKYGBgCnRoYXQgc3VyZSBpcyB0aWR5IGRhdGEKCgojIElDTUEgOS0zLTIwMjYKCmBgYHtyfQpwbG90KGNhcnMpCmBgYApJbiB0aGUgcGxvdCwgSSBzZWUgYSBncmFwaCB3aXRoIHRoZSB4IGF4aXMgYmVpbmcgc3BlZWQgYW5kIGdvaW5nIGZyb20gMCB0byAyNSwgYW5kIHRoZSB5IGF4aXMgc2hvd2luZyBkaXN0YW5jZSBhbmQgZ29pbmcgZnJvbSAwIHRvIDEwMC4gSSBzZWUgcG9pbnRzIHBsb3R0ZWQgb24gdGhlIGdyYXBoIGluIGEgdXB3YXJkIHRyZW5kLiBJIHNlZSBteSByZWZsZWN0aW9uIGluIG15IGNvbXB1dGVyIHNjcmVlbiB3aXRoIGEgYmlnIHNtaWxlIG9uIG15IGZhY2UgYmVjYXVzZSB5aXBwZWUhISEgdGltZSBmb3IgUiEhISEKCg==</div>
 
 
 

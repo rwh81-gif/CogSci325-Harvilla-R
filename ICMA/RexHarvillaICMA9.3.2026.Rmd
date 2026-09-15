@@ -5,12 +5,37 @@ author: "Rex Harvilla"
 date: "9-3-2026"
 ---
 
+#ICMA 9-15-2026
+```{r}
+flights |> 
+  filter(arr_delay > 120 & dep_delay <= 0) |> arrange(desc(arr_delay))
+
+```
+
+```{r}
+PlantGrowth |>
+  ggplot(aes(y=weight, x=group)) +
+  geom_boxplot(width = 0.2)
+
+```
+
+```{r}
+flights |> 
+  arrange(desc(month))
+         
+
+```
+
+
+
 ```{r}
 #| label: setup
 #| include: false
 
 library("tidyverse")
 library("palmerpenguins")
+library("nycflights13")
+
 ```
 # ICMA 9-10-2026
 
