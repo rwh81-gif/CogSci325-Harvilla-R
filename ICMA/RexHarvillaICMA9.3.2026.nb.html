@@ -1755,6 +1755,96 @@ display: none;
 
 
 <!-- rnb-text-begin -->
+<p>#ICMA 9-17-2026</p>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-output-begin eyJkYXRhIjoiXG48IS0tIHJuYi1zb3VyY2UtYmVnaW4gZXlKa1lYUmhJam9pWUdCZ2NseHVabXhwWjJoMGN5QjhQaUJjYmlBZ1ozSnZkWEJmWW5rb2JXOXVkR2dwSUh3K0lGeHVjM1Z0YldGeWFYTmxLRzFsWVc1ZlpHVnNZWGtnUFNCdFpXRnVLR0Z5Y2w5a1pXeGhlU3dnYm1FdWNtMGdQU0JVVWxWRktTeGNiaUFnSUNBZ0lDQWdJQ0J6WkY5a1pXeGhlU0E5SUhOa0tHRnljbDlrWld4aGVTd2dibUV1Y20wZ1BTQlVVbFZGS1N4Y2JpQWdJQ0FnSUNBZ0lDQjBiM1JoYkY5a1pYQmZaR1ZzWVhrZ1BTQnpkVzBvWkdWd1gyUmxiR0Y1SUQ0Z01Dd2dibUV1Y20wZ1BTQlVVbFZGS1N4Y2JpQWdJQ0FnSUNBZ0lDQjBiM1JoYkY5dWRXMWlaWElnUFNCdUtDa3BJSHcrSUZ4dUlDQnRkWFJoZEdVb2NHVnlZMlZ1ZEdGblpTQTlJSFJ2ZEdGc1gyUmxjRjlrWld4aGVTOTBiM1JoYkY5dWRXMWlaWElwWEc1Y2JseHVZR0JnSW4wPSAtLT5cblxuYGBgclxuZmxpZ2h0cyB8PiBcbiAgZ3JvdXBfYnkobW9udGgpIHw+IFxuc3VtbWFyaXNlKG1lYW5fZGVsYXkgPSBtZWFuKGFycl9kZWxheSwgbmEucm0gPSBUUlVFKSxcbiAgICAgICAgICBzZF9kZWxheSA9IHNkKGFycl9kZWxheSwgbmEucm0gPSBUUlVFKSxcbiAgICAgICAgICB0b3RhbF9kZXBfZGVsYXkgPSBzdW0oZGVwX2RlbGF5ID4gMCwgbmEucm0gPSBUUlVFKSxcbiAgICAgICAgICB0b3RhbF9udW1iZXIgPSBuKCkpIHw+IFxuICBtdXRhdGUocGVyY2VudGFnZSA9IHRvdGFsX2RlcF9kZWxheS90b3RhbF9udW1iZXIpXG5cblxuYGBgXG5cbjwhLS0gcm5iLXNvdXJjZS1lbmQgLS0+XG4ifQ== -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuZmxpZ2h0cyB8PiBcbiAgZ3JvdXBfYnkobW9udGgpIHw+IFxuc3VtbWFyaXNlKG1lYW5fZGVsYXkgPSBtZWFuKGFycl9kZWxheSwgbmEucm0gPSBUUlVFKSxcbiAgICAgICAgICBzZF9kZWxheSA9IHNkKGFycl9kZWxheSwgbmEucm0gPSBUUlVFKSxcbiAgICAgICAgICB0b3RhbF9kZXBfZGVsYXkgPSBzdW0oZGVwX2RlbGF5ID4gMCwgbmEucm0gPSBUUlVFKSxcbiAgICAgICAgICB0b3RhbF9udW1iZXIgPSBuKCkpIHw+IFxuICBtdXRhdGUocGVyY2VudGFnZSA9IHRvdGFsX2RlcF9kZWxheS90b3RhbF9udW1iZXIpXG5cblxuYGBgIn0= -->
+<pre class="r"><code>flights |&gt; 
+  group_by(month) |&gt; 
+summarise(mean_delay = mean(arr_delay, na.rm = TRUE),
+          sd_delay = sd(arr_delay, na.rm = TRUE),
+          total_dep_delay = sum(dep_delay &gt; 0, na.rm = TRUE),
+          total_number = n()) |&gt; 
+  mutate(percentage = total_dep_delay/total_number)
+</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-output-begin eyJkYXRhIjoiXG48IS0tIHJuYi1zb3VyY2UtYmVnaW4gZXlKa1lYUmhJam9pWUdCZ2NseHVabXhwWjJoMGN5QThMU0J1ZVdObWJHbG5hSFJ6TVRNNk9tWnNhV2RvZEhOY2JtZHNhVzF3YzJVb1pteHBaMmgwY3lsY2JseHVZR0JnSW4wPSAtLT5cblxuYGBgclxuZmxpZ2h0cyA8LSBueWNmbGlnaHRzMTM6OmZsaWdodHNcbmdsaW1wc2UoZmxpZ2h0cylcblxuYGBgXG5cbjwhLS0gcm5iLXNvdXJjZS1lbmQgLS0+XG4ifQ== -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuZmxpZ2h0cyA8LSBueWNmbGlnaHRzMTM6OmZsaWdodHNcbmdsaW1wc2UoZmxpZ2h0cylcblxuYGBgIn0= -->
+<pre class="r"><code>flights &lt;- nycflights13::flights
+glimpse(flights)
+</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-output-begin eyJkYXRhIjoiXG48IS0tIHJuYi1zb3VyY2UtYmVnaW4gZXlKa1lYUmhJam9pWUdCZ2NseHVabXhwWjJoMGN5QjhQaUJjYmlBZ1ozSnZkWEJmWW5rb1pHVnpkQ2tnZkQ0Z1hHNGdJSE5zYVdObFgyMWhlQ2hoY25KZlpHVnNZWGtzSUc0Z1BTQXhLU0I4UGx4dUlDQnlaV3h2WTJGMFpTaGtaWE4wS1Z4dVlHQmdJbjA9IC0tPlxuXG5gYGByXG5mbGlnaHRzIHw+IFxuICBncm91cF9ieShkZXN0KSB8PiBcbiAgc2xpY2VfbWF4KGFycl9kZWxheSwgbiA9IDEpIHw+XG4gIHJlbG9jYXRlKGRlc3QpXG5gYGBcblxuPCEtLSBybmItc291cmNlLWVuZCAtLT5cbiJ9 -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuZmxpZ2h0cyB8PiBcbiAgZ3JvdXBfYnkoZGVzdCkgfD4gXG4gIHNsaWNlX21heChhcnJfZGVsYXksIG4gPSAxKSB8PlxuICByZWxvY2F0ZShkZXN0KVxuYGBgIn0= -->
+<pre class="r"><code>flights |&gt; 
+  group_by(dest) |&gt; 
+  slice_max(arr_delay, n = 1) |&gt;
+  relocate(dest)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-output-begin eyJkYXRhIjoiXG48IS0tIHJuYi1zb3VyY2UtYmVnaW4gZXlKa1lYUmhJam9pWUdCZ2NseHVabXhwWjJoMGN5QjhQbHh1SUNCbmNtOTFjRjlpZVNodGIyNTBhQ2tnZkQ0Z1hHNGdJSE4xYlcxaGNtbHpaU2hoZG1kZlpHVnNZWGtnUFNCdFpXRnVLR1JsY0Y5a1pXeGhlU3hjYmlBZ0lDQWdJQ0FnSUNBZ0lDQWdJQ0FnSUNBZ0lDQWdJQ0FnSUNBZ2JtRXVjbTBnUFNCVVVsVkZLU2tnZkQ0Z2NtOTFibVFvTWlsY2JpTWpJRzFsWVc0Z1pHOWxjMjUwSUhOcGJHVnVZMlVnYldsemMybHVaeUJrWVhSaFhHNWNibHh1WUdCZ0luMD0gLS0+XG5cbmBgYHJcbmZsaWdodHMgfD5cbiAgZ3JvdXBfYnkobW9udGgpIHw+IFxuICBzdW1tYXJpc2UoYXZnX2RlbGF5ID0gbWVhbihkZXBfZGVsYXksXG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgIG5hLnJtID0gVFJVRSkpIHw+IHJvdW5kKDIpXG4jIyBtZWFuIGRvZXNudCBzaWxlbmNlIG1pc3NpbmcgZGF0YVxuXG5cbmBgYFxuXG48IS0tIHJuYi1zb3VyY2UtZW5kIC0tPlxuIn0= -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuZmxpZ2h0cyB8PlxuICBncm91cF9ieShtb250aCkgfD4gXG4gIHN1bW1hcmlzZShhdmdfZGVsYXkgPSBtZWFuKGRlcF9kZWxheSxcbiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgbmEucm0gPSBUUlVFKSkgfD4gcm91bmQoMilcbiMjIG1lYW4gZG9lc250IHNpbGVuY2UgbWlzc2luZyBkYXRhXG5cblxuYGBgIn0= -->
+<pre class="r"><code>flights |&gt;
+  group_by(month) |&gt; 
+  summarise(avg_delay = mean(dep_delay,
+                             na.rm = TRUE)) |&gt; round(2)
+## mean doesnt silence missing data
+</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-output-begin eyJkYXRhIjoiXG48IS0tIHJuYi1zb3VyY2UtYmVnaW4gZXlKa1lYUmhJam9pWUdCZ2NseHVabXhwWjJoMGN5QjhQaUJjYmlBZ2JYVjBZWFJsS0hOd1pXVmtQV1JwYzNSaGJtTmxMMkZwY2w5MGFXMWxJQ29nTmpBc1hHNGdJQ0FnSUNBZ0lDQXVZV1owWlhJZ1BTQmthWE4wWVc1alpTa2dmRDRnWEc0Z0lITmxiR1ZqZENoNVpXRnlMQ0J0YjI1MGFDd2daR0Y1TENCa1pYQmZkR2x0WlN3Z1lXbHlYM1JwYldVc0lHUnBjM1JoYm1ObExDQm9iM2RmWm1GemREMXpjR1ZsWkNsY2JseHVYRzVnWUdBaWZRPT0gLS0+XG5cbmBgYHJcbmZsaWdodHMgfD4gXG4gIG11dGF0ZShzcGVlZD1kaXN0YW5jZS9haXJfdGltZSAqIDYwLFxuICAgICAgICAgLmFmdGVyID0gZGlzdGFuY2UpIHw+IFxuICBzZWxlY3QoeWVhciwgbW9udGgsIGRheSwgZGVwX3RpbWUsIGFpcl90aW1lLCBkaXN0YW5jZSwgaG93X2Zhc3Q9c3BlZWQpXG5cblxuYGBgXG5cbjwhLS0gcm5iLXNvdXJjZS1lbmQgLS0+XG4ifQ== -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuZmxpZ2h0cyB8PiBcbiAgbXV0YXRlKHNwZWVkPWRpc3RhbmNlL2Fpcl90aW1lICogNjAsXG4gICAgICAgICAuYWZ0ZXIgPSBkaXN0YW5jZSkgfD4gXG4gIHNlbGVjdCh5ZWFyLCBtb250aCwgZGF5LCBkZXBfdGltZSwgYWlyX3RpbWUsIGRpc3RhbmNlLCBob3dfZmFzdD1zcGVlZClcblxuXG5gYGAifQ== -->
+<pre class="r"><code>flights |&gt; 
+  mutate(speed=distance/air_time * 60,
+         .after = distance) |&gt; 
+  select(year, month, day, dep_time, air_time, distance, how_fast=speed)
+</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-output-begin eyJkYXRhIjoiXG48IS0tIHJuYi1zb3VyY2UtYmVnaW4gZXlKa1lYUmhJam9pWUdCZ2NseHVabXhwWjJoMGN5QjhQaUJjYmlBZ2NtVnNiMk5oZEdVb1kyRnljbWxsY2l4Y2JpQWdJQ0FnSUNBZ0lDQWdMbUZtZEdWeUlEMGdaR0Y1S1Z4dVhHNWNibUJnWUNKOSAtLT5cblxuYGBgclxuZmxpZ2h0cyB8PiBcbiAgcmVsb2NhdGUoY2FycmllcixcbiAgICAgICAgICAgLmFmdGVyID0gZGF5KVxuXG5cbmBgYFxuXG48IS0tIHJuYi1zb3VyY2UtZW5kIC0tPlxuIn0= -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuZmxpZ2h0cyB8PiBcbiAgcmVsb2NhdGUoY2FycmllcixcbiAgICAgICAgICAgLmFmdGVyID0gZGF5KVxuXG5cbmBgYCJ9 -->
+<pre class="r"><code>flights |&gt; 
+  relocate(carrier,
+           .after = day)
+</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-output-begin eyJkYXRhIjoiXG48IS0tIHJuYi1zb3VyY2UtYmVnaW4gZXlKa1lYUmhJam9pWUdCZ2NseHVabXhwWjJoMGN5QjhQaUJjYmlBZ2NtVnVZVzFsS0dSbGNGOWhhWEp3YjNKMElEMGdiM0pwWjJsdUtWeHVYRzVjYm1CZ1lDSjkgLS0+XG5cbmBgYHJcbmZsaWdodHMgfD4gXG4gIHJlbmFtZShkZXBfYWlycG9ydCA9IG9yaWdpbilcblxuXG5gYGBcblxuPCEtLSBybmItc291cmNlLWVuZCAtLT5cbiJ9 -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuZmxpZ2h0cyB8PiBcbiAgcmVuYW1lKGRlcF9haXJwb3J0ID0gb3JpZ2luKVxuXG5cbmBgYCJ9 -->
+<pre class="r"><code>flights |&gt; 
+  rename(dep_airport = origin)
+</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
 <p>#ICMA 9-15-2026</p>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
@@ -1781,13 +1871,14 @@ display: none;
 <!-- rnb-text-begin -->
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-output-begin eyJkYXRhIjoiXG48IS0tIHJuYi1zb3VyY2UtYmVnaW4gZXlKa1lYUmhJam9pWUdCZ2NseHVabXhwWjJoMGN5QjhQaUJjYmlBZ1lYSnlZVzVuWlNoa1pYTmpLRzF2Ym5Sb0tTbGNiaUFnSUNBZ0lDQWdJRnh1WEc1Z1lHQWlmUT09IC0tPlxuXG5gYGByXG5mbGlnaHRzIHw+IFxuICBhcnJhbmdlKGRlc2MobW9udGgpKVxuICAgICAgICAgXG5cbmBgYFxuXG48IS0tIHJuYi1zb3VyY2UtZW5kIC0tPlxuIn0= -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuZmxpZ2h0cyB8PiBcbiAgYXJyYW5nZShkZXNjKG1vbnRoKSlcbiAgICAgICAgIFxuXG5gYGAifQ== -->
-<pre class="r"><code>flights |&gt; 
-  arrange(desc(month))
-         
-</code></pre>
+<!-- rnb-output-begin eyJkYXRhIjoiXG48IS0tIHJuYi1zb3VyY2UtYmVnaW4gZXlKa1lYUmhJam9pWUdCZ2NseHVabXhwWjJoMGN5QjhQbHh1SUNBZ0lDQWdJQ0FnWjJ4cGNHMXpaU2dwWEc1Z1lHQWlmUT09IC0tPlxuXG5gYGByXG5mbGlnaHRzIHw+XG4gICAgICAgICBnbGlwbXNlKClcbmBgYFxuXG48IS0tIHJuYi1zb3VyY2UtZW5kIC0tPlxuIn0= -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuZmxpZ2h0cyB8PlxuICAgICAgICAgZ2xpcG1zZSgpXG5gYGAifQ== -->
+<pre class="r"><code>flights |&gt;
+         glipmse()</code></pre>
 <!-- rnb-source-end -->
+<!-- rnb-output-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiRXJyb3IgaW4gZ2xpcG1zZShmbGlnaHRzKSA6IGNvdWxkIG5vdCBmaW5kIGZ1bmN0aW9uIFwiZ2xpcG1zZVwiXG4ifQ== -->
+<pre><code>Error in glipmse(flights) : could not find function &quot;glipmse&quot;</code></pre>
 <!-- rnb-output-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
@@ -1838,7 +1929,7 @@ R!!!!</p>
 <!-- rnb-text-end -->
 </div>
 
-<div id="rmd-source-code">LS0tCnRpdGxlOiAiRDJTQyBJQ01BcyIKb3V0cHV0OiBodG1sX25vdGVib29rCmF1dGhvcjogIlJleCBIYXJ2aWxsYSIKZGF0ZTogIjktMy0yMDI2IgotLS0KCiNJQ01BIDktMTUtMjAyNgpgYGB7cn0KZmxpZ2h0cyB8PiAKICBmaWx0ZXIoYXJyX2RlbGF5ID4gMTIwICYgZGVwX2RlbGF5IDw9IDApIHw+IGFycmFuZ2UoZGVzYyhhcnJfZGVsYXkpKQoKYGBgCgpgYGB7cn0KUGxhbnRHcm93dGggfD4KICBnZ3Bsb3QoYWVzKHk9d2VpZ2h0LCB4PWdyb3VwKSkgKwogIGdlb21fYm94cGxvdCh3aWR0aCA9IDAuMikKCmBgYAoKYGBge3J9CmZsaWdodHMgfD4gCiAgYXJyYW5nZShkZXNjKG1vbnRoKSkKICAgICAgICAgCgpgYGAKCgoKYGBge3J9CiN8IGxhYmVsOiBzZXR1cAojfCBpbmNsdWRlOiBmYWxzZQoKbGlicmFyeSgidGlkeXZlcnNlIikKbGlicmFyeSgicGFsbWVycGVuZ3VpbnMiKQpsaWJyYXJ5KCJueWNmbGlnaHRzMTMiKQoKYGBgCiMgSUNNQSA5LTEwLTIwMjYKCmBgYHtyfQpnZ3Bsb3QoZGF0YT1wZW5ndWlucywgbWFwcGluZz1hZXMoeD1mbGlwcGVyX2xlbmd0aF9tbSwKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIHk9YmlsbF9sZW5ndGhfbW0pKSArIAogIGdlb21fcG9pbnQoKQpgYGAKCmBgYHtyfQpQbGFudEdyb3d0aApnZ3Bsb3QoZGF0YT1QbGFudEdyb3d0aCwgbWFwcGluZz1hZXMoeT13ZWlnaHQseD1ncm91cCkpICsgCiAgZ2VvbV9wb2ludChhbHBoYT0wLjUpICsgc3RhdF9zdW1tYXJ5KGdlb209InBvaW50cmFuZ2UiLGZ1bi5kYXRhID0gIm1lYW5fc2UiLCBjb2xvcj0icHVycGxlIikKYGBgCnRoYXQgc3VyZSBpcyB0aWR5IGRhdGEKCgojIElDTUEgOS0zLTIwMjYKCmBgYHtyfQpwbG90KGNhcnMpCmBgYApJbiB0aGUgcGxvdCwgSSBzZWUgYSBncmFwaCB3aXRoIHRoZSB4IGF4aXMgYmVpbmcgc3BlZWQgYW5kIGdvaW5nIGZyb20gMCB0byAyNSwgYW5kIHRoZSB5IGF4aXMgc2hvd2luZyBkaXN0YW5jZSBhbmQgZ29pbmcgZnJvbSAwIHRvIDEwMC4gSSBzZWUgcG9pbnRzIHBsb3R0ZWQgb24gdGhlIGdyYXBoIGluIGEgdXB3YXJkIHRyZW5kLiBJIHNlZSBteSByZWZsZWN0aW9uIGluIG15IGNvbXB1dGVyIHNjcmVlbiB3aXRoIGEgYmlnIHNtaWxlIG9uIG15IGZhY2UgYmVjYXVzZSB5aXBwZWUhISEgdGltZSBmb3IgUiEhISEKCg==</div>
+<div id="rmd-source-code">LS0tCnRpdGxlOiAiRDJTQyBJQ01BcyIKb3V0cHV0OiBodG1sX25vdGVib29rCmF1dGhvcjogIlJleCBIYXJ2aWxsYSIKZGF0ZTogIjktMy0yMDI2IgotLS0KCiNJQ01BIDktMTctMjAyNgpgYGB7cn0KZmxpZ2h0cyB8PiAKICBncm91cF9ieShtb250aCkgfD4gCnN1bW1hcmlzZShtZWFuX2RlbGF5ID0gbWVhbihhcnJfZGVsYXksIG5hLnJtID0gVFJVRSksCiAgICAgICAgICBzZF9kZWxheSA9IHNkKGFycl9kZWxheSwgbmEucm0gPSBUUlVFKSwKICAgICAgICAgIHRvdGFsX2RlcF9kZWxheSA9IHN1bShkZXBfZGVsYXkgPiAwLCBuYS5ybSA9IFRSVUUpLAogICAgICAgICAgdG90YWxfbnVtYmVyID0gbigpKSB8PiAKICBtdXRhdGUocGVyY2VudGFnZSA9IHRvdGFsX2RlcF9kZWxheS90b3RhbF9udW1iZXIpCgoKYGBgCgpgYGB7cn0KZmxpZ2h0cyA8LSBueWNmbGlnaHRzMTM6OmZsaWdodHMKZ2xpbXBzZShmbGlnaHRzKQoKYGBgCgpgYGB7cn0KZmxpZ2h0cyB8PiAKICBncm91cF9ieShkZXN0KSB8PiAKICBzbGljZV9tYXgoYXJyX2RlbGF5LCBuID0gMSkgfD4KICByZWxvY2F0ZShkZXN0KQpgYGAKCmBgYHtyfQpmbGlnaHRzIHw+CiAgZ3JvdXBfYnkobW9udGgpIHw+IAogIHN1bW1hcmlzZShhdmdfZGVsYXkgPSBtZWFuKGRlcF9kZWxheSwKICAgICAgICAgICAgICAgICAgICAgICAgICAgICBuYS5ybSA9IFRSVUUpKSB8PiByb3VuZCgyKQojIyBtZWFuIGRvZXNudCBzaWxlbmNlIG1pc3NpbmcgZGF0YQoKCmBgYAoKYGBge3J9CmZsaWdodHMgfD4gCiAgbXV0YXRlKHNwZWVkPWRpc3RhbmNlL2Fpcl90aW1lICogNjAsCiAgICAgICAgIC5hZnRlciA9IGRpc3RhbmNlKSB8PiAKICBzZWxlY3QoeWVhciwgbW9udGgsIGRheSwgZGVwX3RpbWUsIGFpcl90aW1lLCBkaXN0YW5jZSwgaG93X2Zhc3Q9c3BlZWQpCgoKYGBgCgpgYGB7cn0KZmxpZ2h0cyB8PiAKICByZWxvY2F0ZShjYXJyaWVyLAogICAgICAgICAgIC5hZnRlciA9IGRheSkKCgpgYGAKCmBgYHtyfQpmbGlnaHRzIHw+IAogIHJlbmFtZShkZXBfYWlycG9ydCA9IG9yaWdpbikKCgpgYGAKCgoKCgojSUNNQSA5LTE1LTIwMjYKYGBge3J9CmZsaWdodHMgfD4gCiAgZmlsdGVyKGFycl9kZWxheSA+IDEyMCAmIGRlcF9kZWxheSA8PSAwKSB8PiBhcnJhbmdlKGRlc2MoYXJyX2RlbGF5KSkKCmBgYAoKYGBge3J9ClBsYW50R3Jvd3RoIHw+CiAgZ2dwbG90KGFlcyh5PXdlaWdodCwgeD1ncm91cCkpICsKICBnZW9tX2JveHBsb3Qod2lkdGggPSAwLjIpCgpgYGAKCmBgYHtyfQpmbGlnaHRzIHw+CiAgICAgICAgIGdsaXBtc2UoKQpgYGAKCgoKYGBge3J9CiN8IGxhYmVsOiBzZXR1cAojfCBpbmNsdWRlOiBmYWxzZQoKbGlicmFyeSgidGlkeXZlcnNlIikKbGlicmFyeSgicGFsbWVycGVuZ3VpbnMiKQpsaWJyYXJ5KCJueWNmbGlnaHRzMTMiKQoKYGBgCiMgSUNNQSA5LTEwLTIwMjYKCmBgYHtyfQpnZ3Bsb3QoZGF0YT1wZW5ndWlucywgbWFwcGluZz1hZXMoeD1mbGlwcGVyX2xlbmd0aF9tbSwKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIHk9YmlsbF9sZW5ndGhfbW0pKSArIAogIGdlb21fcG9pbnQoKQpgYGAKCmBgYHtyfQpQbGFudEdyb3d0aApnZ3Bsb3QoZGF0YT1QbGFudEdyb3d0aCwgbWFwcGluZz1hZXMoeT13ZWlnaHQseD1ncm91cCkpICsgCiAgZ2VvbV9wb2ludChhbHBoYT0wLjUpICsgc3RhdF9zdW1tYXJ5KGdlb209InBvaW50cmFuZ2UiLGZ1bi5kYXRhID0gIm1lYW5fc2UiLCBjb2xvcj0icHVycGxlIikKYGBgCnRoYXQgc3VyZSBpcyB0aWR5IGRhdGEKCgojIElDTUEgOS0zLTIwMjYKCmBgYHtyfQpwbG90KGNhcnMpCmBgYApJbiB0aGUgcGxvdCwgSSBzZWUgYSBncmFwaCB3aXRoIHRoZSB4IGF4aXMgYmVpbmcgc3BlZWQgYW5kIGdvaW5nIGZyb20gMCB0byAyNSwgYW5kIHRoZSB5IGF4aXMgc2hvd2luZyBkaXN0YW5jZSBhbmQgZ29pbmcgZnJvbSAwIHRvIDEwMC4gSSBzZWUgcG9pbnRzIHBsb3R0ZWQgb24gdGhlIGdyYXBoIGluIGEgdXB3YXJkIHRyZW5kLiBJIHNlZSBteSByZWZsZWN0aW9uIGluIG15IGNvbXB1dGVyIHNjcmVlbiB3aXRoIGEgYmlnIHNtaWxlIG9uIG15IGZhY2UgYmVjYXVzZSB5aXBwZWUhISEgdGltZSBmb3IgUiEhISEKCg==</div>
 
 
 
