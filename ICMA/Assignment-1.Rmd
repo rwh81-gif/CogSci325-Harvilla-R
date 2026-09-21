@@ -1,0 +1,31 @@
+---
+title: "Assignment 1 R Notebook"
+output: html_notebook
+author: Rex Harvilla
+---
+
+## The Data
+The data was extracted from the 1974 Motor Trend US magazine, and comprises fuel consumption and 10 aspects of automobile design and performance for 32 automobiles (1973--74 models). The 10 data points given are: Miles Per Gallon, Number of Cylinders (4,6,8), Engine Displacement, Gross Horsepower, Rear Axle Gear Ratio, Weight (in 1000lbs), 1/4 Mile Acceleration Time, Engine Configuraton (V=1, Straight=0), Transmission (0=automatic,1=manual), Number of Forward Gears (3,4,5), Number of Carborators. 
+
+## Research Question
+1) Is there a direct relationship between the number of cylinders a car has and its horsepower?
+
+2) What is the relationship between the weight of a car and its miles per gallon?
+
+## Plots
+```{r}
+ggplot(data = mtcars, mapping = aes(x=cyl,y=hp , group = cyl)) +
+  geom_boxplot()
+```
+
+
+```{r}
+ggplot(data = mtcars,
+        mapping = aes(x=wt , y=mpg)) +
+  geom_point() +
+  geom_smooth(method = "lm")
+
+```
+
+##Conclusion
+We can see from the first graph that the more cylinders a car has, the higher its horsepower, demonstrating a positive correlation between the two data points. For the second graph, we see a negative correlation between the cars weight and its miles per gallon, showing that the more a car weighs, the less fuel efficient (miles per gallon) it is. 
