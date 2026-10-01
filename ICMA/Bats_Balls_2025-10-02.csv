@@ -1,0 +1,58 @@
+StartDate,EndDate,Status,Progress,Duration (in seconds),Finished,RecordedDate,ResponseId,DistributionChannel,UserLanguage,Pencil Control,Conf. Pencil Control,Magazine Standard,Conf. Mag. Stand.,Magazine_Control,Conf. Mag. Control,Pencil_Standard,Conf. Pencil Stand.,Q10
+Start Date,End Date,Response Type,Progress,Duration (in seconds),Finished,Recorded Date,Response ID,Distribution Channel,User Language,"A
+pencil and an eraser cost $1.10 in total. The pencil costs 1 dollar. How much
+does the eraser cost? _____________cents",Indicate how confident you are that your response was correct by writing down a number between 0 (totally not sure) and 100 (totally sure).,A magazine and a banana cost $2.90 in total. The magazine costs 2 dollars more than the banana. How much does the banana cost? _____________cents,"Indicate how confident you are that your response was correct by writing 
+down a number between 0 (totally not sure) and 100 (totally sure).",A magazine and a banana cost $2.90 in total. The magazine costs 2 dollars. How much does the banana cost? _____________cents,"Indicate how confident you are that your response was correct by writing 
+down a number between 0 (totally not sure) and 100 (totally sure).",A pencil and an eraser cost $1.10. The pencil costs 1 dollar more than the eraser. How much does the eraser cost? _____________cents,Indicate how confident you are that your response was correct by writing down a number between 0 (totally not sure) and 100 (totally sure).,Have you seen or heard about problems like these before?
+"{""ImportId"":""startDate"",""timeZone"":""America/Denver""}","{""ImportId"":""endDate"",""timeZone"":""America/Denver""}","{""ImportId"":""status""}","{""ImportId"":""progress""}","{""ImportId"":""duration""}","{""ImportId"":""finished""}","{""ImportId"":""recordedDate"",""timeZone"":""America/Denver""}","{""ImportId"":""_recordId""}","{""ImportId"":""distributionChannel""}","{""ImportId"":""userLanguage""}","{""ImportId"":""QID36_TEXT""}","{""ImportId"":""QID37_TEXT""}","{""ImportId"":""QID38_TEXT""}","{""ImportId"":""QID39_TEXT""}","{""ImportId"":""QID24_TEXT""}","{""ImportId"":""QID25_TEXT""}","{""ImportId"":""QID1_TEXT""}","{""ImportId"":""QID4_TEXT""}","{""ImportId"":""QID40""}"
+9/26/2024 8:38,9/26/2024 8:39,Survey Preview,100,44,TRUE,9/26/2024 8:39,R_7BwUj4OyUIrA242,preview,EN,10,90,90,80,,,,,
+9/26/2024 8:39,9/26/2024 8:40,Survey Preview,100,22,TRUE,9/26/2024 8:40,R_734tMobZbkE1OmG,preview,EN,10,90,90,80,,,,,
+9/26/2024 8:40,9/26/2024 8:40,Survey Preview,100,19,TRUE,9/26/2024 8:40,R_7Likj0Je36bxZk1,preview,EN,,,,,80,90,10,80,
+9/26/2024 8:40,9/26/2024 8:40,Survey Preview,100,17,TRUE,9/26/2024 8:40,R_7imLtLQmHgnkvPH,preview,EN,10,90,90,90,,,,,
+9/26/2024 8:53,9/26/2024 8:53,Survey Preview,100,14,TRUE,9/26/2024 8:53,R_78LKYUEQL3k55lm,preview,EN,2,2,2,2,,,,,No
+9/30/2024 12:13,9/30/2024 12:14,IP Address,100,46,TRUE,9/30/2024 12:14,R_5R9cvvcJ5vFulLe,anonymous,EN,,,,,90,100,10,90,Maybe
+9/30/2024 12:13,9/30/2024 12:14,IP Address,100,44,TRUE,9/30/2024 12:14,R_7LbZFfk5l0eIzrn,anonymous,EN,10,100,90,100,,,,,Yes
+9/30/2024 12:14,9/30/2024 12:15,IP Address,64,100,FALSE,9/30/2024 12:16,R_6Vlui4bh6Zn904U,anonymous,EN,,,,,,,,,
+9/30/2024 12:13,9/30/2024 12:14,IP Address,73,86,FALSE,9/30/2024 12:16,R_7l51hNrlrKiZ8g0,anonymous,EN,10,100,,,,,,,
+9/30/2024 12:13,9/30/2024 12:14,IP Address,73,79,FALSE,9/30/2024 12:16,R_3q9rdhwTuFM3US4,anonymous,EN,,,,,90,88,,,
+9/30/2024 12:13,9/30/2024 12:15,IP Address,64,147,FALSE,9/30/2024 12:16,R_3AXSvVtXBO8aLWp,anonymous,EN,,,,,,,,,
+9/30/2024 11:53,9/30/2024 11:53,IP Address,73,14,FALSE,9/30/2024 12:16,R_3FKbvC2kDZCftDJ,anonymous,EN,,,,,0.3,20%,,,
+9/30/2024 12:13,9/30/2024 12:14,IP Address,73,74,FALSE,9/30/2024 12:16,R_7Diuy1xaAmv7ad6,anonymous,EN,,,,,,,,,Yes
+9/30/2024 12:13,9/30/2024 12:14,IP Address,55,67,FALSE,9/30/2024 12:16,R_1EibP5yW1CSm16w,anonymous,EN,,,,,,,,,
+9/30/2024 12:13,9/30/2024 12:14,IP Address,55,80,FALSE,9/30/2024 12:16,R_8LCEhhdrv1wbr28,anonymous,EN,,,,,,,,,
+9/30/2024 12:14,9/30/2024 12:15,IP Address,55,40,FALSE,9/30/2024 12:16,R_5KPWVJM45Ecd8Iu,anonymous,EN,,,,,,,,,
+9/30/2024 12:13,9/30/2024 12:16,IP Address,64,162,FALSE,9/30/2024 12:16,R_3aqUmwROl4g8Nzr,anonymous,EN,10,,,,,,,,
+9/30/2024 12:16,9/30/2024 12:17,IP Address,100,31,TRUE,9/30/2024 12:17,R_15FyEMBbNwEXgB1,anonymous,EN,10,100,45,100,,,,,Yes
+9/30/2024 12:16,9/30/2024 12:17,IP Address,100,35,TRUE,9/30/2024 12:17,R_3Fs30khuUhJ9Q43,anonymous,EN,,,,,90,100,10,90,Maybe
+9/30/2024 12:16,9/30/2024 12:17,IP Address,100,35,TRUE,9/30/2024 12:17,R_6j9h9CeyOAxYNCR,anonymous,EN,,,,,0.9,75,0.05,75,Yes
+9/30/2024 12:16,9/30/2024 12:17,IP Address,100,39,TRUE,9/30/2024 12:17,R_7fD0XwVS010KjZf,anonymous,EN,,,,,90,100,10,100,Maybe
+9/30/2024 12:16,9/30/2024 12:17,IP Address,100,45,TRUE,9/30/2024 12:17,R_7PuX7t6ScsmTetV,anonymous,EN,,,,,90,100,10,100,Yes
+9/30/2024 12:16,9/30/2024 12:17,IP Address,100,50,TRUE,9/30/2024 12:17,R_1E3RnX5eC0YwAkN,anonymous,EN,10,100,45 cents,100,,,,,Yes
+9/30/2024 12:16,9/30/2024 12:17,IP Address,100,66,TRUE,9/30/2024 12:17,R_12Ekl4iOSy2GKcw,anonymous,EN,10,100,90,100,,,,,Maybe
+9/30/2024 12:16,9/30/2024 12:17,IP Address,100,68,TRUE,9/30/2024 12:17,R_1WUVktlU1pC1v2m,anonymous,EN,,,,,90,100,10,100,No
+9/30/2024 12:17,9/30/2024 12:17,IP Address,100,33,TRUE,9/30/2024 12:17,R_3HSIBKN4q86ZvwN,anonymous,EN,10 cents,90%,0.9,90%,,,,,Yes
+9/30/2024 12:16,9/30/2024 12:17,IP Address,100,70,TRUE,9/30/2024 12:17,R_3HXCGfCym8uQ4VX,anonymous,EN,,,,,90,100,$0.05 ,100,Yes
+9/30/2024 12:17,9/30/2024 12:17,IP Address,100,53,TRUE,9/30/2024 12:17,R_6smTBUxHW8daa3L,anonymous,EN,10,100,45,100,,,,,Yes
+9/30/2024 12:16,9/30/2024 12:18,IP Address,100,91,TRUE,9/30/2024 12:18,R_507QeQgde6SvW7H,anonymous,EN,10,100,45,95,,,,,Yes
+9/30/2024 12:16,9/30/2024 12:18,IP Address,100,84,TRUE,9/30/2024 12:18,R_6eRncHpDB4KOkUC,anonymous,EN,10,99,90,50,,,,,Yes
+9/30/2024 12:17,9/30/2024 12:18,IP Address,100,63,TRUE,9/30/2024 12:18,R_7X4Hr0sVczdZDPt,anonymous,EN,0.1,100,45,100,,,,,Yes
+9/30/2024 12:16,9/30/2024 12:18,IP Address,100,101,TRUE,9/30/2024 12:18,R_8qdTKXRUtFxjphG,anonymous,EN,,,,,0.9,100,0.05,80,Yes
+9/30/2024 12:16,9/30/2024 12:18,IP Address,100,117,TRUE,9/30/2024 12:18,R_3ogzFqqhnqsEDPr,anonymous,EN,10,100,90,0,,,,,Yes
+9/30/2024 12:23,9/30/2024 12:24,IP Address,100,85,TRUE,9/30/2024 12:24,R_5WtE6i86Oy31CeJ,anonymous,EN,,,,,45,100,5,100,Yes
+10/2/2024 10:58,10/2/2024 12:08,IP Address,50,4190,FALSE,10/9/2024 12:08,R_3G20wfjPWZgYxSA,anonymous,EN,,,,,,,,,
+10/2/2025 13:55,10/2/2025 13:56,IP Address,100,62,TRUE,10/2/2025 13:56,R_68zOygvQIja4alP,anonymous,EN,,,,,90,98,5,98,Yes
+10/2/2025 13:55,10/2/2025 13:56,IP Address,100,73,TRUE,10/2/2025 13:56,R_5DXCz4PFiLJAD2C,anonymous,EN,10,99,45,95,,,,,Yes
+10/2/2025 13:55,10/2/2025 13:56,IP Address,100,70,TRUE,10/2/2025 13:56,R_7Dj2bQd9F52BYEB,anonymous,EN,,,,,90,99,10,99,Maybe
+10/2/2025 13:55,10/2/2025 13:56,IP Address,100,64,TRUE,10/2/2025 13:56,R_3jRobfyCcdyxlw5,anonymous,EN,10,90,90,100,,,,,Yes
+10/2/2025 13:55,10/2/2025 13:56,IP Address,100,63,TRUE,10/2/2025 13:56,R_6O7JvQP9vzJAJGy,anonymous,EN,,,,,90,100,5,100,Yes
+10/2/2025 13:55,10/2/2025 13:56,IP Address,100,44,TRUE,10/2/2025 13:56,R_1GPRCk9YBd7K1KJ,anonymous,EN,,,,,90,100,5,100,Yes
+10/2/2025 13:55,10/2/2025 13:56,IP Address,100,53,TRUE,10/2/2025 13:56,R_6HMKBHOKQd3Y65o,anonymous,EN,$0.10 ,100,$0.90 ,85,,,,,Yes
+10/2/2025 13:55,10/2/2025 13:56,IP Address,100,88,TRUE,10/2/2025 13:56,R_14kjm60usRZTMz1,anonymous,EN,10,99,45,30,,,,,Yes
+10/2/2025 13:56,10/2/2025 13:57,IP Address,100,56,TRUE,10/2/2025 13:57,R_7AMxFF5lrKezsWF,anonymous,EN,,,,,0.9,100,0.1,100,No
+10/2/2025 13:55,10/2/2025 13:57,IP Address,100,96,TRUE,10/2/2025 13:57,R_6uHwYj65XQPmsHl,anonymous,EN,,,,,90,100,5,100,Yes
+10/2/2025 13:55,10/2/2025 13:57,IP Address,100,136,TRUE,10/2/2025 13:57,R_7Y5NS1vPUhdHopQ,anonymous,EN,10,100,45,100,,,,,Yes
+10/2/2025 13:55,10/2/2025 13:58,IP Address,100,168,TRUE,10/2/2025 13:58,R_6MhuFdgWJrXOew6,anonymous,EN,10,99,45,99,,,,,Yes
+10/2/2025 13:58,10/2/2025 13:58,IP Address,100,49,TRUE,10/2/2025 13:58,R_6c0CJf4stybEtyo,anonymous,EN,10,100,90,100,,,,,Maybe
+10/2/2025 13:58,10/2/2025 13:59,IP Address,100,38,TRUE,10/2/2025 13:59,R_6npKbaY5WQUX3dM,anonymous,EN,,,,,0.9,100,0.1,90,No
+10/2/2025 13:58,10/2/2025 13:59,IP Address,100,80,TRUE,10/2/2025 13:59,R_1oaR7UEe8lAgcko,anonymous,EN,0.1,90,0.45,90,,,,,Yes
+10/2/2025 13:57,10/2/2025 14:00,IP Address,100,179,TRUE,10/2/2025 14:00,R_5g79jX3g6qrrWwB,anonymous,EN,0.1,70,0.9,70,,,,,No

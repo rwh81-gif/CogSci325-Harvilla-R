@@ -5,6 +5,16 @@ author: "Rex Harvilla"
 date: "9-3-2026"
 ---
 
+#ICMA 10-1-2026
+```{r}
+read_csv("week5-1_ClassData.csv", 
+         col_types = list(bonusPayment = col_number()),
+         na = c("N/A", ".")) |> 
+  rename(bonus_payment = bonusPayment)
+
+```
+
+```
 
 #ICMA 9-29-2026
 ```{r}
@@ -17,7 +27,10 @@ flights |>
 
 ```{r}
 read_csv("week5-1_ClassData.csv")
+class_data <- read_csv("week5-1_ClassData.csv",
+                       na = c("N/A", ""))
 
+class_data
 ```
 #ICMA 9-24-2026
 ```{r}
