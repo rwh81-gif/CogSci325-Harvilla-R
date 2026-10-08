@@ -4,6 +4,46 @@ output: html_notebook
 author: "Rex Harvilla"
 date: "9-3-2026"
 ---
+#ICMA 10-8-2026
+
+## Slides 15 - 16 (Include the following in your ICMA file)
+
+ICMA question: what's the difference between these two code chunks? Are the outputs the same?
+**Answer here**: In the first chunk, we see the use of the "mapping" function, where in the second the function is removed. The output of the two chunks have the same output!
+
+
+```{r}
+mpg |> 
+  ggplot(mapping = aes(y = hwy, x = displ, color = manufacturer)) + 
+  geom_point()
+```
+
+```{r}
+mpg |> 
+  ggplot(aes(y = hwy, x = displ, color = manufacturer)) + 
+  geom_point()
+```
+
+## Slide 19 (Include the following in your ICMA file)
+
+ICMA question: what are these warnings about and why should we worry about them?
+**Answer**: The warnings indicate that we have used more than the 6 discrete values that we can have shapes for. Anything above the first 6 values are not displayed on the graph because we do not have unique shapes for them. If we ever need to plot more than 6 discrete values, we need to use different ways of displaying the values other than using the 6 default shapes provided. 112 rows were removed from the data becasue they could not be displayed and visualized. 
+
+```{r}
+mpg |> 
+  ggplot(aes(y = hwy, x = displ, shape = manufacturer)) + 
+  geom_point()
+```
+
+## Slide 42 (Include in ICMA)
+
+Change the color of the line to something other than the default blue
+
+```{r}
+ggplot(mpg, aes(x = displ, y = hwy)) + 
+  geom_point(aes(color = class)) + 
+  geom_polygon(color='red')
+```
 
 #ICMA 10-1-2026
 ```{r}
@@ -11,8 +51,6 @@ read_csv("week5-1_ClassData.csv",
          col_types = list(bonusPayment = col_number()),
          na = c("N/A", ".")) |> 
   rename(bonus_payment = bonusPayment)
-
-```
 
 ```
 

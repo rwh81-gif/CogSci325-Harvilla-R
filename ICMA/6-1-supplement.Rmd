@@ -1,0 +1,127 @@
+---
+title: "D2SC 6-1 code supplement"
+author: "Dr. André Eliatamby"
+---
+
+```{r}
+#| label: setup
+#| include: FALSE
+
+knitr::opts_chunk$set(echo=TRUE)
+library(tidyverse)
+library(knitr)
+library(palmerpenguins)
+library(readxl)
+library(nycflights13)
+```
+
+# Slides 9 to 12
+
+```{r}
+ChickWeight %>%
+  ggplot() #empty ggplot function
+
+ChickWeight %>%
+  ggplot(mapping = aes(x = weight)) #provide the aesthetic mapping (in this case, x-axis only)
+
+ChickWeight %>%
+  ggplot(mapping =  aes(x = weight)) + #provide the aesthetic mapping (in this case, x-axis only)
+  geom_histogram() #tell ggplot which geometry to use, in this case a histogram
+```
+
+
+
+## Slides 15 - 16 (Include the following in your ICMA file)
+
+ICMA question: what's the difference between these two code chunks? Are the outputs the same?
+**Answer here**: 
+
+
+```{r}
+mpg |> 
+  ggplot(mapping = aes(y = hwy, x = displ, color = manufacturer)) + 
+  geom_point()
+```
+
+```{r}
+mpg |> 
+  ggplot(aes(y = hwy, x = displ, color = manufacturer)) + 
+  geom_point()
+```
+
+
+## Slide 19 (Include the following in your ICMA file)
+
+ICMA question: what are these warnings about and why should we worry about them?
+**Answer**:
+
+```{r}
+mpg |> 
+  ggplot(aes(y = hwy, x = displ, shape = manufacturer)) + 
+  geom_point()
+```
+
+## Slides 24 - 27
+
+```{r}
+mpg |> 
+  ggplot(aes(y = hwy, x = displ)) + 
+  geom_point(color = "blue")
+```
+
+```{r}
+mpg |> 
+  ggplot(aes(y = hwy, x = displ)) + 
+  geom_point(shape = 8)
+```
+
+```{r}
+mpg |> 
+  ggplot(aes(y = hwy, x = displ)) + 
+  geom_point(shape = 23, 
+             color = "red",
+             fill = "black")
+```
+
+# Slides 30 - 31
+
+```{r}
+mpg |> 
+  ggplot(aes(y = hwy, x = displ)) +
+  geom_point()
+mpg |> 
+  ggplot(aes(y = hwy, x = displ)) +
+  geom_smooth()
+```
+
+```{r}
+mpg |> 
+  ggplot(aes(y = hwy, x = displ)) +
+  geom_point() +
+  geom_smooth()
+```
+
+# Slide 36
+
+```{r}
+# left
+mpg |> 
+  ggplot(aes(y = hwy, x = displ, group = drv)) +
+  geom_smooth()
+# right
+mpg |> 
+  ggplot(aes(y = hwy, x = displ, color = drv)) +
+  geom_smooth()
+```
+
+
+# Slide 42 (Include in ICMA)
+
+Change the color of the line to something other than the default blue
+
+```{r}
+ggplot(mpg, aes(x = displ, y = hwy)) + 
+  geom_point(aes(color = class)) + 
+  geom_polygon(color='red')
+```
+
