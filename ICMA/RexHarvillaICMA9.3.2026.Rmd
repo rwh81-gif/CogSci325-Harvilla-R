@@ -4,6 +4,117 @@ output: html_notebook
 author: "Rex Harvilla"
 date: "9-3-2026"
 ---
+
+#ICMA 10-13-2026
+
+# Slide 12 - 14 (Add these completed chunks to your ICMA file)
+Add a `facet_wrap`
+
+```{r}
+mpg |> 
+  ggplot(aes(x = displ, y = hwy)) + 
+  geom_point() +
+  facet_wrap(~cyl,ncol=4)
+```
+
+Set the number of columns to 4
+```{r}
+mpg |> 
+  ggplot(aes(x = displ, y = hwy)) + 
+  geom_point() 
+```
+
+Set the number of rows to 4
+```{r}
+mpg |> 
+  ggplot(aes(x = displ, y = hwy)) + 
+  geom_point() 
+```
+
+
+# Slide 29 (Add these to your ICMA file)
+
+
+```{r}
+ggplot(mpg,aes(x=drv,fill=class)) +
+  geom_bar(position='stack')
+
+ggplot(mpg,aes(x=drv,fill=class)) +
+  geom_bar(position='dodge')
+
+ggplot(mpg,aes(x=drv,fill=class)) +
+  geom_bar(position='fill')
+```
+# Slides 32 - 33 (Add these to your ICMA file)
+
+```{r}
+ggplot(mpg, aes(x = displ, y = hwy)) +
+  geom_point(position = 'jitter')
+```
+
+```{r}
+ggplot(mpg, aes(x = displ, y = hwy)) +
+  geom_jitter(width = 2,height=2)
+```
+
+# Exercise: facet_grid (put this section in your ICMA file)
+
+We want to add a facet using `facet_grid` that presents `drv` as rows and `cyl` as columns.
+
+Do that below (if you need a hint, look at the supplement for Slide 14)
+
+```{r}
+ggplot(mpg, aes(x = displ, y = hwy)) + 
+  geom_point() +
+  facet_grid(drv~cyl)
+```
+
+Let's play with the x and y scales. First, call up the face_grid documentation.
+
+```{r}
+?facet_grid
+```
+
+What does the "scales" option do and what values does it take?
+
+The "scales" option changes the scale of the displayed axis. By default, the sales are fixed meaning they are shared across all axis. You can "free" them using the "free_x" and "free_y" values which then has them use their own scales that arent the same as the other axis scales. This helps with visualizing data that maybe isnt clustered the same way as eachother. 
+
+Below, experiment with facet_grid option, `scales = "free_x"`, `scales = "free_y"`, and `scales = 'free'`, and `scales = 'fixed'`.  Compare with the code chunk above without scales being specified
+
+
+```{r}
+ggplot(mpg, aes(x = displ, y = hwy)) + 
+  geom_point() +  
+  facet_grid(drv ~ cyl, scales="free_x")
+
+ggplot(mpg, aes(x = displ, y = hwy)) + 
+  geom_point() +  
+  facet_grid(drv ~ cyl, scales="fixed")
+
+ggplot(mpg, aes(x = displ, y = hwy)) + 
+  geom_point() +  
+  facet_grid(drv ~ cyl, scales="free_y")
+
+ggplot(mpg, aes(x = displ, y = hwy)) + 
+  geom_point() +  
+  facet_grid(drv ~ cyl, scales="free")
+
+
+```
+
+Answer the following questions:
+
+What effect does each option have on the plot?
+- it frees the scale of the data so that it can be viewed more representatively. It frees the scale so you can see the data be clustered or not in a more accurate
+Why might you want to use one of these options?
+- the free options allow us to see data points easier visually, like in the free_y graph where we see the top row is spread between 20 to 25, whereas the middle row is spread out more between 20 and 45. If the scales were fixed, the top row would seem very clustered and you cannot see the differences between the visualizations. 
+What is the default `scales` value?
+- the default scale value is "fixed" 
+
+
+
+
+
 #ICMA 10-8-2026
 
 ## Slides 15 - 16 (Include the following in your ICMA file)
@@ -199,7 +310,7 @@ flights |>
 ```
 
 
-
+## SetupChunk
 ```{r}
 #| label: setup
 #| include: false
