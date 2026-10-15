@@ -1,0 +1,150 @@
+---
+title: "D2SC - 7-1 supplement"
+author: "Rex Harvilla"
+subtitle: "7.1 10-15-2026"
+format:
+  revealjs:
+    incremental: true
+    scrollable: true
+    smaller: true
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo=TRUE)
+library(tidyverse)
+library(nycflights13)
+```
+
+# Slides 14 - 16, 19
+
+```{r}
+ggplot(diamonds, aes(x = carat)) +
+  geom_histogram(binwidth = 1)
+```
+
+```{r}
+ggplot(diamonds, aes(x = carat)) +
+  geom_histogram(binwidth = 0.05)
+```
+
+```{r}
+ggplot(diamonds, aes(x = carat)) +
+  geom_histogram(binwidth = 5)
+```
+
+
+# Slide 24
+
+```{r}
+diamonds |> 
+  ggplot(aes(x = y)) + 
+  geom_histogram(binwidth = 0.5) +
+  coord_cartesian(ylim = c(0, 10))
+```
+
+
+# Slides 26 - 28
+
+```{r}
+diamonds |> 
+  ggplot(aes(x = carat)) +
+  geom_boxplot()
+
+diamonds |> 
+  ggplot(aes(x = carat)) +
+  geom_boxplot(outliers = FALSE)
+
+diamonds |> 
+  ggplot(aes(x = carat)) +
+  geom_boxplot(outlier.colour = 'red')
+```
+
+
+# Slide 33
+
+```{r}
+ggplot(diamonds, aes(x = price)) + 
+  geom_freqpoly(aes(color = cut), binwidth = 500,linewidth = 0.75)
+```
+
+# Slide 36
+
+```{r}
+
+mpg |> 
+  arrange(class,hwy) |> 
+  ggplot(aes(x = class,y = hwy)) +
+  geom_boxplot()
+```
+
+# Slide 38
+
+```{r}
+mpg |> 
+  ggplot(aes(x = fct_reorder(class, hwy, median), 
+             y = hwy)) +
+  geom_boxplot()
+```
+
+
+# Slides 40 - 41
+
+```{r}
+ggplot(diamonds, aes(x = cut, y = color)) +
+  geom_count()
+```
+
+```{r}
+diamonds |> 
+  count(color, cut) |>  
+  ggplot(aes(y = color, x = cut)) +
+  geom_tile(aes(fill = n))
+```
+
+
+# ICMA Exercise: faceted histograms
+
+Using the `diamonds` dataset, create 2 plots.
+
+1. A plot showing a histogram of diamond price
+2. A plot showing a histogram of diamond price, **faceted** by color and cut
+
+Choose a suitable bin width for your histogram(s). What influenced your choice?
+
+```{r}
+ggplot(diamonds, aes(x = price)) +
+  geom_histogram(binwidth = 1000)
+```
+
+```{r}
+   ggplot(diamonds, aes(x = price)) +
+  geom_histogram(binwidth = 500) +
+  facet_grid(color ~ cut)
+```
+
+# ICMA Exercise: two variables
+
+Using the `mpg` dataset plot a frequency polygon of the `hwy` variable, with the `class` variable mapped to the color aesthetic
+
+```{r}
+mpg |> 
+  ggplot()
+```
+
+
+# ICMA Exercise: histograms vs. boxplots
+
+Below I have plotted a histograms and boxplots of the same data. Both plots show the variation of the `carat` variable from the `diamonds` data set.
+
+Compare and contrast the two plots. What kind of information is highlighted by each? What kind of information is highlighted by both?
+
+```{r}
+ggplot(diamonds, aes(x = carat)) +
+  geom_histogram(binwidth = 0.1)
+```
+
+```{r}
+diamonds |> 
+  ggplot(aes(x = carat)) +
+  geom_boxplot(outlier.colour = 'red')
+```
