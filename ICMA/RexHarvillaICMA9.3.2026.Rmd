@@ -4,6 +4,42 @@ output: html_notebook
 author: "Rex Harvilla"
 date: "9-3-2026"
 ---
+
+#10-20-2026
+
+# ICMA Exercise (last class): two variables
+
+Using the `mpg` dataset plot a frequency polygon of the `hwy` variable, with the `class` variable mapped to the color aesthetic
+
+```{r}
+ggplot(mpg, aes(x = hwy)) + 
+  geom_freqpoly(aes(color = class), binwidth = 2,linewidth = 1)
+```
+
+# ICMA Exercise (last class): histograms vs. boxplots
+
+Below I have plotted a histograms and boxplots of the same data. Both plots show the variation of the `carat` variable from the `diamonds` data set.
+
+Compare and contrast the two plots. What kind of information is highlighted by each? What kind of information is highlighted by both?
+
+
+
+```{r}
+ggplot(diamonds, aes(x = carat)) +
+  geom_histogram(binwidth = 0.1)
+```
+
+```{r}
+diamonds |> 
+  ggplot(aes(x = carat)) +
+  geom_boxplot(outlier.colour = 'red')
+```
+
+In the bloxplot, it clearly shows the outliers that are in the graph. The histogram also shows us a clearer distributional shape for the data. 
+
+
+
+
 #ICMA 10-15-2026
 
 # ICMA Exercise: faceted histograms
