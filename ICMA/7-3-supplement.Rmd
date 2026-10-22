@@ -1,0 +1,333 @@
+---
+title: "D2SC - 7-1 supplement"
+author: ""
+subtitle: ""
+format:
+  revealjs:
+    incremental: true
+    scrollable: true
+    smaller: true
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo=TRUE)
+library(tidyverse)
+library(nycflights13)
+```
+
+# Slide 24
+
+```{r}
+ggplot(mpg, aes(x = displ, y = hwy)) +
+  geom_point(aes(color = class)) +
+  geom_smooth(se = FALSE) +
+  labs(
+    x = "Engine displacement (L)",
+    y = "Highway fuel economy (mpg)",
+    color = "Car type",
+    title = "Fuel efficiency generally decreases with engine size",
+    subtitle = "Two seaters (sports cars) are an exception because of their light weight",
+    caption = "Data from fueleconomy.gov"
+  )
+```
+
+# Slide 26
+
+```{r}
+df <- tribble(~y, ~x, ~label,
+        1, 1, "point")
+df |> 
+  ggplot(aes(y = y, x = x)) +
+  geom_text(aes(label = label))
+```
+
+# Slide 27
+
+```{r}
+
+ggplot(mpg, aes(x = displ, y = hwy)) +
+  geom_point() +
+  annotate(
+    geom = "label", x = 3.5, y = 38,
+    label = str_wrap("Larger engine sizes tend to have lower fuel economy.", 
+           width = 30),
+    hjust = 1, color = "red"
+  ) +
+  annotate(
+    geom = "segment",
+    x = 3, y = 35, xend = 5, yend = 25, color = "red",
+    arrow = arrow(type = "closed")
+  )
+```
+
+
+# Slide 30
+
+# Slide 30
+
+```{r}
+ggplot(mpg, aes(x = displ, y = hwy, color = drv)) +
+  geom_point() +
+  scale_y_continuous(breaks = c(10,15)) +
+  scale_color_discrete(labels = c("4" = "4-wheel", "f" = "front", "r" = "rear"))
+```
+
+
+```{r}
+ggplot(mpg, aes(x = displ, y = hwy, color = drv)) +
+  geom_point() +
+  scale_y_continuous(breaks = seq(15, 40, by = 5)) +
+  scale_color_discrete(labels = c("4" = "4-wheel", "f" = "front", "r" = "rear"))
+```
+
+
+# Slide 31
+
+```{r}
+library(scales)
+ggplot(mpg, aes(x = displ, y = hwy, color = drv)) +
+  geom_point() +
+  scale_y_continuous(breaks = seq(15, 40, by = 5), labels = label_percent()) +
+  scale_color_discrete(labels = c("4" = "4-wheel", "f" = "front", "r" = "rear"))
+```
+
+
+
+
+# Slide 35
+
+```{r}
+ggplot(mpg, aes(x = displ, y = hwy)) +
+  geom_point(aes(color = drv)) +
+  scale_color_brewer(palette = "Set1")
+```
+
+# Slide 35
+
+```{r}
+ggplot(mpg, aes(x = displ, y = hwy)) +
+  geom_point(aes(color = drv)) +
+  geom_smooth() +
+  annotate(geom = "rect", xmin = 5, xmax = 6, ymin = 10, ymax = 30,
+           fill = "lightgrey", colour = "black", alpha = 0.5)
+```
+
+```{r}
+mpg |>
+  filter(displ >= 5 & displ <= 6 & hwy >= 10 & hwy <= 25) |>
+  ggplot(aes(x = displ, y = hwy)) +
+  geom_point(aes(color = drv)) +
+  geom_smooth()
+```
+# Slide 36
+
+```{r}
+ggplot(mpg, aes(x = displ, y = hwy)) +
+  geom_point(aes(color = drv)) +
+  geom_smooth() +
+  xlim(5, 6) +
+  ylim(10, 25)
+```
+
+```{r}
+ggplot(mpg, aes(x = displ, y = hwy)) +
+  geom_point(aes(color = drv)) +
+  geom_smooth() +
+  scale_x_continuous(limits = c(5, 6)) +
+  scale_y_continuous(limits = c(10, 25))
+```
+
+
+# Slide 37
+
+```{r}
+ggplot(mpg, aes(x = displ, y = hwy)) +
+  geom_point(aes(color = drv)) +
+  geom_smooth() +
+  coord_cartesian(xlim = c(5, 6), ylim = c(10, 25))
+```
+
+
+# Slide 40
+
+```{r}
+ggplot(mpg, aes(x = displ, y = hwy)) +
+  geom_point(aes(color = drv)) +
+  geom_smooth() +
+  coord_cartesian(xlim = c(5, 6), ylim = c(10, 25))
+```
+
+# Slide 42
+
+```{r}
+ggplot(mpg, aes(x = displ, y = hwy)) +
+  geom_point(aes(color = class)) +
+  geom_smooth(se = FALSE) +
+  theme_bw() # using theme_bw() with no additional modifications
+```
+
+
+# ICMA Exercise: annotate (see code chunk for slide 27)
+
+Create a plot using the `mpg`, `diamonds` or `nycflights13` data set and add an annotation to the plot.
+
+Break this down into steps:
+
+i. choose a dataset
+ii. inspect it using `glimpse` or `head`
+iii. decide what plot to create (will you show one variable, two variables, three variables?)
+iv. use the built-in help function to understand the geoms below
+v. add the annotation!
+
+Don't get too hung up on whether your annotation is showing something useful, just annotate the plot to see how it works!
+
+Some useful geoms to use for annotations are:
+-geom_vline
+-geom_hline
+-geom_rect
+-geom_segment
+-geom_label
+
+```{r}
+ggplot(mpg, aes(x=cyl, y=drv)) +
+  geom_point() +
+  geom_vline(xintercept = 6) +
+   annotate(
+    geom = "label", x = 7, y = 2,
+    label = str_wrap("There is a line at X = 5", 
+           width = 30),
+    hjust = 1, color = "red")
+```
+
+
+# ICMA Exercise: summarise and use axis labels (slide 31 and slide 24)
+
+Here I want you to use the `label_currency` function to change the y-axis labels of a plot to show percentages for data plotted using the `diamonds` dataset.
+
+There are two parts:
+
+First, using `group_by` and `summarise`, I want you to create a table which shows the mean price of each cut of diamond.
+
+Then plot this data using `geom_col,` making use of label_currency (similar to label_percentage in slide 31) to add currency symbols to the y-axis. Change the y-axis label to say "average price"
+
+You will need the `scales` library to be installed and loaded
+
+```{r}
+library(scales)
+diamonds |> 
+  group_by(cut) |> 
+  summarise(average_price = mean(price)) |> 
+  ggplot() +
+  geom_col(aes(x=cut, y=average_price)) +
+  scale_y_continuous(labels = label_currency()) +
+  labs(y = "Here is a really long axis title", x = "I have to pee!!")
+```
+
+
+# ICMA Exercise: using a built-in theme (see chunk for slides 26 and 42)
+
+Use the `diamonds` dataset to plot the count of different diamond cuts, using the `theme_dark()` theme. Choose and appropriate geom to display the counts and add a text label with the count values for each cut. 
+
+
+```{r}
+diamonds |> 
+  ggplot(aes(x = cut)) +
+  geom_bar() +
+  theme_dark()
+```
+
+
+What are some communication issues you face constructing this plot?
+
+How can you resolve them? Generate your improved plot below:
+
+```{r}
+
+```
+
+
+# ICMA Exercise: changing "ticks"/"breaks" (slide 30)
+
+First, some background. We've talked about R having array or `vectors`  defined by the `c()` operator. E.g., below I create two vector. When you run the code you should see `[1] 1 2 3 4` and `[1] "a" "b" "c"`.
+
+
+```{r}
+c(1,2,3,4)
+c("a","b","c")
+```
+
+Try to create your own vector here:
+
+```{r}
+
+```
+
+
+Many times we will want vectors that contain numerical sequences. R makes it easy to do that with `seq`. These two lines generate the same structure
+
+```{r}
+c(1,2,3,4)
+seq(1,4,by=1)
+```
+
+`seq` takes a lower bound, an upper bound, and a sequence incrementer, and uses those values to create an appropriate vector. 
+
+See if you can create the same vector I've manually written out below using `seq`
+
+```{r}
+c(5,10,15,20,25,30,35,40,45,50,55,60,65,70,75,80,85,90,95,100)
+
+```
+
+Below I am plotting hwy by cty from mpg. The current "breaks" or "ticks" on the x-axis show intervals of 10 starting from 0 and ending on 40. 
+
+```{r}
+ggplot(mpg, aes(x = hwy, y = cty, color = drv)) +
+  geom_jitter()
+```
+
+Now say I want to change the x-axis breaks to show intervals of 5 from 0 to 40. To do that I can use `scale_x_continuous`.
+
+Why would I use `scale_x_continuous`?
+
+Read the documentation for `scale_x_continuous`, looking specficially at the `breaks` option. What does it do? What does it take as a value?
+
+Write two ways of creating the `breaks` vector needed to modify the x-axis as I have just described, one which explicitly writes out out the whole vector, and one using `seq`
+
+```{r}
+
+```
+
+
+Now, add the appropriate `scale_x_continuous` layer setting the breaks to be as described above. Choose whatever way of specifying the breaks you prefer. Did this work?
+
+```{r}
+ggplot(mpg, aes(x = hwy, y = cty, color = drv)) +
+  geom_jitter()
+```
+
+Now modify the x-axis breaks to be equal to `c(10,15)`. What did you notice? 
+
+```{r}
+
+```
+
+
+Now modify the Y-AXIS breaks so that they go in intervals of 2 from 0 to 30. What do you think about this interval?
+
+```{r}
+
+```
+
+Drawing on the examples we have just created, why is choosing axis-breaks important for science communication? In what ways can breaks be inappropriate and what are the drawbacks of inappropriate breaks? 
+
+
+# ICMA Exercise: modifying other elements of a theme
+
+What other aspects of plot themes can be modified? Modify one we haven't talked about yet in the lecture using some dataset we've used in class
+
+```{r}
+
+```
+
+

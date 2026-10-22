@@ -4,6 +4,81 @@ output: html_notebook
 author: "Rex Harvilla"
 date: "9-3-2026"
 ---
+#10-22-2026
+
+# ICMA Exercise: annotate (see code chunk for slide 27)
+
+Create a plot using the `mpg`, `diamonds` or `nycflights13` data set and add an annotation to the plot.
+
+Break this down into steps:
+
+i. choose a dataset
+ii. inspect it using `glimpse` or `head`
+iii. decide what plot to create (will you show one variable, two variables, three variables?)
+iv. use the built-in help function to understand the geoms below
+v. add the annotation!
+
+Don't get too hung up on whether your annotation is showing something useful, just annotate the plot to see how it works!
+
+Some useful geoms to use for annotations are:
+-geom_vline
+-geom_hline
+-geom_rect
+-geom_segment
+-geom_label
+
+```{r}
+ggplot(mpg, aes(x=cyl, y=drv)) +
+  geom_point() +
+  geom_vline(xintercept = 6) +
+   annotate(
+    geom = "label", x = 7, y = 2,
+    label = str_wrap("There is a line at X = 5", 
+           width = 30),
+    hjust = 1, color = "red")
+```
+
+
+# ICMA Exercise: summarise and use axis labels (slide 31 and slide 24)
+
+Here I want you to use the `label_currency` function to change the y-axis labels of a plot to show percentages for data plotted using the `diamonds` dataset.
+
+There are two parts:
+
+First, using `group_by` and `summarise`, I want you to create a table which shows the mean price of each cut of diamond.
+
+Then plot this data using `geom_col,` making use of label_currency (similar to label_percentage in slide 31) to add currency symbols to the y-axis. Change the y-axis label to say "average price"
+
+You will need the `scales` library to be installed and loaded
+
+```{r}
+library(scales)
+diamonds |> 
+  group_by(cut) |> 
+  summarise(average_price = mean(price)) |> 
+  ggplot() +
+  geom_col(aes(x=cut, y=average_price)) +
+  scale_y_continuous(labels = label_currency()) +
+  labs(y = "Here is a really long axis title", x = "I have to pee!!")
+```
+
+
+# ICMA Exercise: using a built-in theme (see chunk for slides 26 and 42)
+
+Use the `diamonds` dataset to plot the count of different diamond cuts, using the `theme_dark()` theme. Choose and appropriate geom to display the counts and add a text label with the count values for each cut. 
+
+
+```{r}
+diamonds |> 
+  ggplot(aes(x = cut)) +
+  geom_bar() +
+  theme_dark()
+```
+
+
+
+
+
 
 #10-20-2026
 
