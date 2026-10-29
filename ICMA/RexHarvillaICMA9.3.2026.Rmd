@@ -3,7 +3,78 @@ title: "D2SC ICMAs"
 output: html_notebook
 author: "Rex Harvilla"
 date: "9-3-2026"
+
+#10-29-2026
+
+## ICMA Exercise 1
+
+Let's go back to using our `str_` functions on our `fruit` dataset but this time we'll use more complex regular expressions
+
+- filter to keep only names that begin with the letter f
+```{r}
+str_view(fruit, "^f")
+
+
+```
+- filter to keep only names that begin or end with the letter a
+```{r}
+str_view(fruit, "^a")
+str_view(fruit, "a$")
+
+```
+- filter to keep only names that start with a vowel
+```{r}
+str_view(fruit, "^[aeiou]")
+
+
+```
+- filter to keep only names that start with a consonant, followed by a vowel
+```{r}
+str_view(fruit, "^[^a|e|i|o|u]")
+
+```
+
+```{r}
+str_subset(fruit, "^[^aeiou][aeiou]")
+
+```
+
+## ICMA Exercise 2:
+
+What do these regexes mean? Use words to describe the meaning, then check in R by applying it to the `fruit` vector, `words` vector, or the `babynames` dataset 
+
+- `^.*$`
+Its the whole string, with the carrot starting the string and the dollarsign ending the string. .* is looking for characters repeating 0 or more times.
+- `[abcdefg]+`
+This is asking for words that have one of these letters repeated one or more times
+- `[abcdefg][zyxwvuts]`
+This is asking for words that have one of the first set of letters followed by the second set of letters. They have to be next to eachother.
+- `\..\..\..`
+A period followed by any character (\.) followed by any character, repeated 3 times total. the \. escapes the . special function, so we are refering to the actual . character not the function.
+- `(.)\1\1\1`
+- `(.)[a-z](.).*\2\1`
+Jeannette, Lavinia, Jeanne. This string saves a first letter, has a second, then saves the third, then any number of letters could come after that 3rd character, but the final 2 characters must be the 2nd saved character followed by the 1st saved character. 
+
+NOTE: if using babynames, use the distinct_baby_names vector we created before or filter the babynames dataset for years > 2000
+
+NOTE: when applying these remember that `\1` needs to be converted to `\\1` when it appears within in quotation marks (" ")
+
+
+
+
 ---
+```{r}
+ggplot(data, aes(x = var1, y = var2)) +
+geom_point(aes(color = var3))
+```
+
+```{r}
+ggplot(mpg, aes(x = displ, y = hwy, color = class)) +
+  geom_point() +
+  geom_smooth()
+```
+
+
 #10-22-2026
 
 # ICMA Exercise: annotate (see code chunk for slide 27)
@@ -293,10 +364,10 @@ ggplot(mpg, aes(x = displ, y = hwy)) +
 
 #ICMA 10-1-2026
 ```{r}
-read_csv("week5-1_ClassData.csv", 
-         col_types = list(bonusPayment = col_number()),
-         na = c("N/A", ".")) |> 
-  rename(bonus_payment = bonusPayment)
+
+
+read_csv("week5-1_ClassData.csv", col_names = FALSE, skip = 2)
+
 
 ```
 
