@@ -4,6 +4,48 @@ output: html_notebook
 author: "Rex Harvilla"
 date: "9-3-2026"
 
+#11-3-2026
+
+## ICMA 3
+```{r}
+flights |> 
+  group_by(year, month, day) |> 
+  summarize(
+    proportion_delayed = mean(dep_delay <= 60, na.rm = TRUE),
+    count_long_delay = sum(arr_delay >= 300, na.rm = TRUE),
+    .groups = "drop"
+  )
+```
+
+## 5.1
+
+Use mutate() to add the following variables to the trials table
+- has_response: whether a response was recorded.
+- too_fast: whether reaction time is strictly below 300 ms.
+- too_slow: whether reaction time is strictly above 1500 ms.
+- in_range: whether reaction time is between 300 and 1500 ms, including both endpoints.
+
+```{r}
+trials |> 
+  filter(is.na(response)) +
+  summarize(
+    sum(rt << 300, na.rm = TRUE),
+    sum(rt >> 1500, na.rm = TRUE))
+
+```
+
+## 5.2
+
+create a bar plot showing either the count or proportion of trials that are true or false, by condition
+
+```{r}
+trials |> 
+  group_by(condition) |> 
+  summarise(count_correct = sum(correct, na.rm = TRUE)) |>
+```
+
+
+
 #10-29-2026
 
 ## ICMA Exercise 1

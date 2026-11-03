@@ -1,0 +1,49 @@
+---
+title: "Assignment 3"
+output: html_notebook
+author: Rex Harvilla
+date: 11-1-2026
+---
+
+## Set Up
+
+
+```{r}
+Study1 <- read.csv("Study1_data-1.csv")
+Study2 <- read.csv("Study2_data-1.csv")
+Study3 <- read.csv("Study3_data.csv")
+library(tidyverse)
+```
+
+
+## Figure 2 and Figure 3
+
+### Figure 2 
+This figure shows the percentage of each response to the question asking participants whether they believe in moral progress across the 3 studies.
+
+```{r}
+bind_rows(
+Study1 |> mutate(study="Study1"),
+Study2 |> mutate(study="Study2"),
+Study3 |> mutate(study="Study3")) |> 
+  ggplot(aes(y=study, fill = progress.belief)) +
+  geom_bar(position="fill") +
+  labs(x = "Percentage", y =  NULL) +
+  scale_x_continuous(labels = c("0","25","50","75","100"))
+```
+
+
+### Figure 3
+
+```{r}
+bind_rows(
+Study1 |> mutate(study="Study1"),
+Study2 |> mutate(study="Study2"),
+Study3 |> mutate(study="Study3")) |>
+  ggplot(aes(y=Human))
+```
+
+
+## Exploratory Analysis
+
+## Exploratory Text Analysis
