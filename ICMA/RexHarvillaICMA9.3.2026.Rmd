@@ -4,6 +4,26 @@ output: html_notebook
 author: "Rex Harvilla"
 date: "9-3-2026"
 
+# 11-12-2026
+
+# ICMA 1:
+
+1. Make a copy of the flights data set called `flights_mod` by filtering all rows where `arr_delay` is not NA.
+
+2. Using a base R for-loop, to directly modify each `dep_delay` cell by it's corresponding `arr_delay` cell times * 1.43
+
+```{r}
+library(nycflights13)
+flights_mod <- flights |> filter(!is.na(arr_delay))
+
+
+flights_mod |> select(dep_delay) |>  head()
+
+for (i in seq_along(dep_delay)) {
+  dep_delay[[i]] = arr_delay * 1.43 }
+
+```
+
 #11-3-2026
 
 ## ICMA 3
