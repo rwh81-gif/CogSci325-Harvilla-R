@@ -5,6 +5,37 @@ author: Rex Harvilla
 date: 11-1-2026
 ---
 
+```{r}
+
+ggplot(chi.data |> filter (trial_type == 'all_full' | trial_type == 'all_subset'), aes(x=age,y=prop,fill=trial_type)) +
+  geom_point(width=0.3,color='black',shape=23, size=3) + 
+  ggtitle("Proportion 'Good' Responses per Participant, Control Trials") +
+  scale_fill_manual(values=c("blue","red")) +
+  facet_grid(condition~trial_type)
+
+ggplot(chi.data |> (trial_type == 'some_full' | trial_type == 'some_subset'), aes(x=age,y=prop,fill=trial_type)) +
+  geom_point(width=0.3,color='black',shape=23, size=3) + 
+  ggtitle("Proportion 'Good' Responses per Participant, Critical Trials") +
+  scale_fill_manual(values=c("gold","green")) +
+  facet_grid(condition~trial_type)
+
+
+
+```
+
+```{r}
+
+
+
+summary_2 <- function (df,var) {
+  df |>  group_by(var, speaker) |>
+     count(var,speaker) |>
+     mutate( prop = n/sum(n))
+}
+
+conversation_data |> summary_2(day_of_week)
+```
+
 ## Set Up
 
 
